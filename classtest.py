@@ -40,3 +40,26 @@ class TestCreds(unittest.TestCase):
         self.assertEqual(self.new_credential.account,'facebook')
         self.assertEqual(self.new_credential.userName,'Sam Karanja')
         self.assertEqual(self.new_credential.password,'beaut56')
+
+
+            def save_credential_test(self):
+        """
+        test case to test if the crential object is saved into the credentials list.
+        """
+        self.new_credential.save_details()
+        self.assertEqual(len(Credentials.credslist),1)
+
+    def tearDown(self):
+        '''
+        method that does clean up after each test case has run.
+        '''
+        Credentials.credslist = []
+
+    def test_save_many_accounts(self):
+        '''
+        test to check if we can save multiple credentials objects to our credentials list
+        '''
+        self.new_credential.save_details()
+        test_credential = Credentials("pintrest","ugavmic","laton3") 
+        test_credential.save_details()
+        self.assertEqual(len(Credentials.credslist),2)
