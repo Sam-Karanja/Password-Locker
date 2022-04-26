@@ -1,6 +1,8 @@
 import random
 import string
 
+from click import password_option
+
 
 class Users:
 
@@ -24,6 +26,25 @@ class Users:
 
 class Credentials:
     
+    @classmethod
+    def verify_user(cls, username, password):
+        """method to verify whether the user is in our list or not"""
+
+        a_user = ""
+        for user in Users.user_list:
+            if(user.username == username and user.password == password):
+                a_user == user.username
+        return a_user
+
+    def __init__(self,account, username,passoword):
+        """instantiation of the credentials class object"""
+        
+        self.accout = account
+        self.userName = username
+        self.password = password
+        
+        
+
 
 
 
