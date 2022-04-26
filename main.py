@@ -37,7 +37,7 @@ class Credentials:
                 a_user == user.username
         return a_user
 
-    def __init__(self,account, username,passoword):
+    def __init__(self,account, username,password):
         """instantiation of the credentials class object"""
         
         self.accout = account

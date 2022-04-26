@@ -19,9 +19,9 @@ def login_user(username,password):
     check_user = Credentials.verify_user(username, password)
     return check_user
 
-def create_new_credential():
+def create_new_credential(account,userName,password):
     """function that create new credentials for a given user account"""
-    new_credential = Credentials(account, username, password)
+    new_credential = Credentials(account, userName, password)
     return new_credential
 
 def save_credentials(credentials):
@@ -117,12 +117,12 @@ def permissoner():
             print(f"Account Credential for: {account} - UserName: {userName} - Password:{password} created succesfully")
             print('\n')
         elif short_code == "dc":
-            if display_accounts_details():
+            if display_user():
                 print("Here's your list of acoounts: ")
 
                 print('*' * 30)
                 print('_'* 30)
-                for account in display_accounts_details():
+                for account in display_user():
                     print(f" Account:{account.account} \n User Name:{username}\n Password:{password}")
                     print('_'* 30)
                 print('*' * 30)
