@@ -2,13 +2,13 @@ from main import Users, Credentials
 
 
 def create_new_user(username, password):
-    """function to createa a new user from the user class with username and password"""
+    """function to create a new user from the user class with username and password"""
     new_user = Users(username, password)
     return new_user
 
 def save_user(user):
     """function to save a new user"""
-    Users.adduser()
+    user.adduser()
 
 def display_user():
     """funtion to display an existing user"""
@@ -59,13 +59,13 @@ def copy_password(account):
     return Credentials.copy_password(account)
 
 
-def passlocker():
-    print(" Welcome to your Accounts ...\n Please enter one of the following to proceed.\n CA ---  Create New Account  \n LI ---  Have An Account  \n")
+def permissoner():
+    print(" Welcome Dear Subscriber ...\n Enter one of the following to proceed.\n ca ---  Create New Account  \n li ---  already have account?  \n")
     short_code=input("").lower().strip()
     if short_code == "ca":
         print("Sign Up")
         print('-' * 60)
-        username = input("User_name: ")
+        username = input("Provide user: ")
         while True:
             print(" TP - To type your own pasword:\n GP - To generate random Password")
             password_Choice = input().lower().strip()
@@ -82,14 +82,14 @@ def passlocker():
         print(f"Hello {username}, Your account has been created succesfully! Your password is: {password}")
         print("*"*85)
     elif short_code == "li":
-        print("*"*50)
+        print("*"*70)
         print("Enter your User name and your Password to log in:")
-        print('*' * 50)
+        print('*' * 70)
         username = input("User name: ")
         password = input("password: ")
         login = login_user(username,password)
         if login_user == login:
-            print(f"Hello {username}.Welcome To PassWord Locker Manager")  
+            print(f"Hello {username}.Welcome To Our Application")  
             print('\n')
     while True:
         print("Use these short codes:\n CC - Create a new credential \n DC - Display Credentials \n FC - Find a credential \n GP - Generate A randomn password \n D - Delete credential \n EX - Exit the application \n")
@@ -158,7 +158,7 @@ def passlocker():
             password = generate_Password()
             print(f" {password} Has been generated succesfull. You can proceed to use it to your account")
         elif short_code == 'ex':
-            print("Thanks for using passwords store manager.. See you next time!")
+            print("Thanks for using Password_Locker.. See you next time!")
             break
         else:
             print("Wrong entry... Check your entry again and let it match those in the menu")
@@ -166,4 +166,4 @@ def passlocker():
         print("Please enter a valid input to continue")
 
 if __name__ == '__main__':
-    passlocker()
+    permissoner()

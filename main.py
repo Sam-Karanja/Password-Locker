@@ -13,7 +13,7 @@ class Users:
         self.username=username
         self.password=password
 
-   def adduser (self):
+   def adduser(self):
       self.user_list.append(self)
 
    
