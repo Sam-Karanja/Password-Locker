@@ -72,10 +72,12 @@ def copy_password(cls, account):
 @classmethod
 def check_credential(cls, account):
     """method that checks whether a credential exists in the credential list and returns true or false"""
-    for credential in cls.credentials_list:
-        if credential.account == account:
+    for cred in cls.creds_list:
+        if cred.account == account:
             return True
-        return False
+        else:
+
+            return False
 
 
 
