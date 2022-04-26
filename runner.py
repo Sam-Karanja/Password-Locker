@@ -65,7 +65,7 @@ def permissoner():
     if short_code == "ca":
         print("Sign Up")
         print('-' * 60)
-        username = input("Provide user: ")
+        username = input("Provide userName: ")
         while True:
             print(" TP - To type your own pasword:\n GP - To generate random Password")
             password_Choice = input().lower().strip()
