@@ -100,6 +100,7 @@ class TestCreds(unittest.TestCase):
         '''
         method that displays all the credentials that has been saved by the user
         '''
+
         self.assertEqual(Credentials.display_credentials(),Credentials.credslist)
 
 if __name__ == "__main__":
