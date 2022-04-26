@@ -7,17 +7,17 @@ class TestClass(unittest.TestCase):
     """a test class that defines test cases for the User class"""
 
 def setUp(self):
-   """method that runs befor each individual test method runss"""
+    """method that runs befor each individual test method runss"""
     self.new_user = Users('SamKaranja','skmurigi')
 
- def test_init(self):
+    def test_init(self):
         """
         test case to chek if the object has been initialized correctly
         """
         self.assertEqual(self.new_user.username,'SamKaranja')
         self.assertEqual(self.new_user.password,'yuvicytr')
 
-       def test_save_user(self):
+    def test_save_user(self):
         """
         test case to test if a new user instance has been saved into the User list
         """
@@ -42,10 +42,8 @@ class TestCreds(unittest.TestCase):
         self.assertEqual(self.new_credential.password,'beaut56')
 
 
-            def save_credential_test(self):
-        """
-        test case to test if the crential object is saved into the credentials list.
-        """
+    def save_credential_test(self):
+        """test case to test if the credential object is saved into the credential list"""
         self.new_credential.save_details()
         self.assertEqual(len(Credentials.credslist),1)
 

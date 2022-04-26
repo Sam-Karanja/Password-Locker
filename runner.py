@@ -8,7 +8,7 @@ def create_new_user(username, password):
 
 def save_user(user):
     """function to save a new user"""
-    yUsers.adduser()
+    Users.adduser()
 
 def display_user():
     """funtion to display an existing user"""
