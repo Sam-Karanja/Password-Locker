@@ -1,5 +1,6 @@
 import random
 import pyperclip
+import string
 
 from click import password_option
 
@@ -76,8 +77,18 @@ def check_credential(cls, account):
         if cred.account == account:
             return True
         else:
-
             return False
+
+@classmethod
+def display_credentials(cls):
+    """method that displays all items on the credentials list"""
+    return cls.credslist
+
+def generate_password(stringLength = 8):
+    """method to generate a random password containing letters, digits, and special characters"""
+    password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "k&%)@#$"
+    return ''.join(random.choice(password)for i in range(stringLength))
+
 
 
 
