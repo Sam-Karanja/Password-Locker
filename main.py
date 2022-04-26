@@ -1,5 +1,5 @@
 import random
-import string
+import pyperclip
 
 from click import password_option
 
@@ -56,6 +56,26 @@ class Credentials:
         Credentials.credslist.remove(self)
 
         
+@classmethod
+def find_credentials(cls, account):
+    """method that takes in the account name and returns the account credetials"""
+    
+    for cred in cls.credslist:
+        if cred.account == account:
+            return cred
+
+@classmethod
+def copy_password(cls, account):
+    found_credentials = Credentials.find_credential(account)
+    pyperclip.copy(found_credentials.password)
+
+@classmethod
+def check_credential(cls, account):
+    """method that checks whether a credential exists in the credential list and returns true or false"""
+    for credential in cls.credentials_list:
+        if credential.account == account:
+            return True
+        return False
 
 
 
