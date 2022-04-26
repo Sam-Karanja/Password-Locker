@@ -11,7 +11,7 @@ class Users:
         self.password=password
 
    def adduser (self):
-      self.users_list.append(self)
+      self.user_list.append(self)
 
    
    @classmethod
@@ -20,6 +20,10 @@ class Users:
 
    def delete_user(self):
        Users.user_list.remove(self)
+
+
+class Credentials:
+    
 
 
 
